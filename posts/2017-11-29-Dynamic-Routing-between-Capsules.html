@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dynamic Routing Between Capsules</title>
+        <link rel="stylesheet" href="../css/default.css" />
+        <link rel="stylesheet" href="../css/syntax.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://chaoxuprime.com/mathjax_conf.js">
+        </script>
+
+    </head>
+
+    <body>
+        <header class="hide-on-print">
+            <div id="blog-title">
+                 <a href="../">chuan</a>
+            </div>
+
+        </header>
+
+        <article role="main">
+            <h1 id="article-title">Dynamic Routing Between Capsules</h1>
+            <br />
+
+<p>这是一篇在NIPS2017备受关注的论文，<a href="https://arxiv.org/pdf/1710.09829.pdf">文章链接</a>。作者Sara Sabour, Nicholas Frosst, Geoffrey E. Hinton。</p>
+<p>文章主要做了：以向量形式特征表示capsule代替标量形式的特征表示neuron；以iterative routing-by-agreement机制代替max-pooling。</p>
+<h1 id="cnn-vs-capsule-network">CNN vs Capsule Network</h1>
+<p>CNN在特征提取方面具有优势，但其无法表征特征之间的关系。举个例子，一张正常的人脸图片和将这张图片进行嘴和眉毛的错位后的图片，丢给CNN模型预测，得到的结果极有可能一样。CNN的做法是通过更多的data augumentation的例子来训练模型，使模型可以记忆这些变体。不同于CNN, 在该文提出的Capsule，以向量形式表示特征。向量的模长表示该特征出现的概率，向量的方向则代表了特征的一些属性的组合（如位置，颜色等），具有良好的表征。另一方面，在最大池化过程中，CNN通过选择丢弃部分信息而保留了最主要的特征，这对于重叠数字的判别上会存在较大的问题，而Capsule抛弃了池化，用动态路由机制进行前后两层Capsule的信息传递。</p>
+<h1 id="capsnet结构">CapsNet结构</h1>
+<p>在该文中，CapsNet的结构依次为ConvNet Layer, Primary Capsules和Digit Capsules。以MNIST dataset为例，</p>
+<ul>
+<li>第一层为ReLU Conv:
+<ul>
+<li>1 input to 256 neurons.</li>
+<li><span class="math inline">9 × 9</span> kernel with 256 channels and a stride of 1</li>
+</ul></li>
+<li>第二层为Primary Capsules:
+<ul>
+<li>256 neurons to 8 Capsules.</li>
+<li><span class="math inline">9 × 9</span> kernel with 32 channels and a stride of 2</li>
+</ul></li>
+<li>第三层为Digit Capsules:
+<ul>
+<li>8-D Capsules to 16-D capsules</li>
+<li>output is computed through the transformation matrix <span class="math inline"><em>W</em><sub><em>i</em></sub><em>j</em></span> between <span class="math inline"><em>u</em><sub><em>i</em></sub></span> to <span class="math inline"><em>v</em><sub><em>j</em></sub></span></li>
+</ul></li>
+</ul>
+<p>各层的特征输出维度分别为： <br /><span class="math display">$$
+\begin{array}{|ll|}
+\hline 
+Layer &amp; Shape   \\
+- &amp; bn\times 1\times 28\times 28 \\ 
+ReLU Conv &amp; bn\times 256\times 20\times 20 \\
+Primary Capsules  &amp; bn\times 8\times 32\cdot6\cdot6 \\
+Digit Capsules &amp; bn\times 10\times 16\times 1 \\
+L_{2norm} &amp; bn\times 10\times 1\times 1 \\ 
+\hline
+\end{array}
+$$</span><br /></p>
+<h1 id="routing-by-agreement">Routing-by-agreement</h1>
+<p>下表给出相关的符号说明： <br /><span class="math display">$$
+\begin{array}{|lll|}
+\hline
+v_j &amp; 指L+1层的capsule\ s_j 经过&quot;squashing&quot;的非线性变换\\
+s_j &amp; 指L+1层的capsule\ j\\
+\hat{u}_{j|i} &amp; 指L层的i经过转换矩阵W_{ij}后的prediction vector(预测向量)\\
+c_{j|i} &amp;与u_{j|i}相关的coupling coefficient(耦合系数)\\
+u_i &amp; 指L层的capsule\ i \\
+W &amp; 转换矩阵 \\
+\hline
+\end{array}
+$$</span><br /></p>
+<p>从L层的capsule <span class="math inline"><em>u</em><sub><em>i</em></sub></span>到L+1层的capsule <span class="math inline"><em>v</em><sub><em>j</em></sub></span>的计算如下： <br /><span class="math display">$$
+\begin{align*}
+\hat{u}_{j|i} &amp;= W_{ij}u_i\\
+s_j &amp;= \sum_ic_{ij}\hat{u}_{j|i}\\
+v_j &amp;= \frac{||s_j||^2}{1+||s_j||^2}\frac{s_j}{||s_j||}
+\end{align*}
+$$</span><br /> 其中转换矩阵<span class="math inline"><em>W</em><sub><em>i</em>|<em>j</em></sub> = <em>m</em> × <em>k</em></span>, 将会通过BP进行更新，<span class="math inline"><em>c</em><sub><em>i</em><em>j</em></sub></span>称为coupling coefficients，可视为加权，将会通过routing-by-agreement更新。根据<span class="math inline"><em>û</em><sub><em>j</em>|<em>i</em></sub> = <em>W</em><sub><em>i</em>|<em>j</em></sub><em>u</em><sub><em>i</em></sub></span>，通过转换矩阵<span class="math inline"><em>W</em></span>与<span class="math inline"><em>u</em></span>的相乘，可以看出每一个L+1层的capsule <span class="math inline"><em>v</em><sub><em>j</em></sub></span>都会由转移矩阵对应的权重<span class="math inline">(<em>j</em>, <em>i</em>)</span>与L层对应的capsule <span class="math inline"><em>u</em><sub><em>i</em></sub></span>相乘得到。通过这个关系，将会得到capsule <span class="math inline"><em>u</em><sub><em>i</em></sub></span>和capsule <span class="math inline"><em>v</em><sub><em>j</em></sub></span>的共计<span class="math inline"><em>j</em> × <em>i</em></span>个值<span class="math inline"><em>u</em><sub><em>j</em>|<em>i</em></sub></span>，随后通过耦合系数<span class="math inline"><em>c</em><sub><em>j</em>|<em>i</em></sub></span>与<span class="math inline"><em>û</em><sub><em>j</em>|<em>i</em></sub></span>相乘求和，得到L+1的capsule <span class="math inline"><em>v</em><sub><em>j</em></sub></span>。Routing-by-Agreement的计算过程如下图所示。</p>
+<center>
+<img src="../images/transformation.jpg" width="600">
+</center>
+<p>耦合系数<span class="math inline"><em>c</em><sub><em>i</em></sub></span>与L+1层的<span class="math inline"><em>v</em><sub><em>j</em></sub></span>和L层的<span class="math inline"><em>u</em><sub><em>i</em></sub></span>都有联系。该系数由动态路由机制进行更新。 该文认为，从该机制中可以看到起初<span class="math inline"><em>c</em><sub><em>i</em><em>j</em></sub></span>对所有的capsule <span class="math inline"><em>u</em><sub><em>i</em></sub></span>都一样对待，但如果prediction vector <span class="math inline"><em>û</em><sub><em>j</em>|<em>i</em></sub></span>增大，将会影响其对应的耦合系数增加，则其他对应于L层的capsule的耦合系数将会减少，即一种正反馈。下面给出该文的routing-by-agreement的实现方法。</p>
+<hr />
+<p>procedure ROUTING(<span class="math inline"><em>û</em><sub><em>j</em>|<em>i</em></sub>, <em>r</em>, <em>l</em></span>)</p>
+<p><span class="math inline"> </span>for all capsule <span class="math inline"><em>i</em></span> in layer <span class="math inline"><em>l</em></span> and capsule <span class="math inline"><em>j</em></span> in layer <span class="math inline"><em>l</em> + 1</span>: <span class="math inline"><em>b</em><sub><em>i</em><em>j</em></sub> ← 0</span></p>
+<p><span class="math inline"> </span>for r iterations do</p>
+<p><span class="math inline">  </span>for all capsule <span class="math inline"><em>i</em></span> in layer <span class="math inline"><em>l</em></span>: <span class="math inline"><em>c</em><sub><em>i</em></sub> ← <em>s</em><em>o</em><em>f</em><em>t</em><em>m</em><em>a</em><em>x</em>(<em>b</em><sub><em>i</em></sub>)</span></p>
+<p><span class="math inline">  </span>for all capsule <span class="math inline"><em>j</em></span> in layer <span class="math inline"><em>l</em> + 1</span>: <span class="math inline"><em>s</em><sub><em>j</em></sub> ← ∑<sub><em>i</em></sub><em>c</em><sub><em>i</em><em>j</em></sub><em>û</em><sub><em>j</em>|<em>i</em></sub></span></p>
+<p><span class="math inline">  </span>for all capsule <span class="math inline"><em>j</em></span> in layer <span class="math inline"><em>l</em> + 1</span>: <span class="math inline"><em>v</em><sub><em>j</em></sub> ← <em>s</em><em>q</em><em>u</em><em>a</em><em>s</em><em>h</em>(<em>s</em><sub><em>j</em></sub>)</span></p>
+<p><span class="math inline">  </span>for all capsule <span class="math inline"><em>i</em></span> in layer <span class="math inline"><em>l</em></span> and capsule <span class="math inline"><em>j</em></span> in layer <span class="math inline"><em>l</em> + 1</span>: <span class="math inline"><em>b</em><sub><em>i</em><em>j</em></sub> ← <em>b</em><sub><em>i</em><em>j</em></sub> + <em>û</em><sub><em>j</em>|<em>i</em></sub> ⋅ <em>v</em><sub><em>j</em></sub></span></p>
+<hr />
+<h1 id="实验效果">实验效果</h1>
+<ul>
+<li><p>抗干扰性：对于数据集的抗干扰性能(robustness)更强。在对MNIST的加入细微的Affine transformation，可以看出Capsule相比CNN识别更加准确。（CNN不做data augumentation的而直接进行比较，存疑）</p></li>
+<li><p>视角变化：对于smallNORB数据集（<span class="math inline">96 × 96</span>的立体灰度图片），实现<span class="math inline">2.7%</span>的误差，为state-of-art的结果。</p></li>
+<li><p>重叠数字：对于MultiMNIST数据集，该文实验认为Capsule识别重影效果比自己的baseline的CNN好。</p></li>
+</ul>
+<p>备注：此处对reconstruction不作讨论。</p>
+
+<div class="info">Posted by Pingchuan Ma </div>
+
+        </article>
+
+
+    </body>
+</html>
