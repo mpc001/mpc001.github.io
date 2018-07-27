@@ -92,7 +92,7 @@ $$</span><br /> 其中，可调节的参数<span class="math inline"><em>α</em>
 <p>基于内容的注意力机制的表达式的变量中包括<span class="math inline"><em>h</em></span>和<span class="math inline"><em>s</em><sub><em>i</em> − 1</sub></span>。其表达式为 <br /><span class="math display">$$
 \begin{align*}
 \alpha_i = Attend(s_{i-1}
-, h_j)
+, h_t)
 \end{align*}
 $$</span><br /></p>
 <p>基于位置的注意力机制表达式的变量包括<span class="math inline"><em>s</em><sub><em>i</em> − 1</sub></span>和<span class="math inline"><em>α</em><sub><em>i</em> − 1</sub></span>。其表达式为 <br /><span class="math display">$$
@@ -102,22 +102,23 @@ $$</span><br /></p>
 $$</span><br /></p>
 <p>Attention机制通过概率的链式法则直接估计后验概率 <br /><span class="math display">$$
 \begin{align*}
-p(\mathbf{y}|\mathbf{x})=\prod_{l=1}^Lp(y_l|y_1,...,y_{l-1}, \mathbf{x})
+p(\mathbf{y}|\mathbf{x})=\prod_{i=1}^Lp(y_i|y_1,...,y_{i-1}, \mathbf{x})
 \end{align*}
-$$</span><br /> 其中<span class="math inline">$p(y_l|y_1,...,y_{l-1}, \x)$</span>通过下式得到 <br /><span class="math display">$$
+$$</span><br /> 为了计算<span class="math inline"><em>p</em>(<em>y</em><sub><em>i</em></sub>|<em>y</em><sub>1</sub>, ..., <em>y</em><sub><em>i</em> − 1</sub>, <strong>x</strong>)</span>，可以通过下式得到 <br /><span class="math display">$$
 \begin{align*}
-    h_t &amp;= Encoder(X) \\
-    a_{lt}&amp;= LocationAttention(\{a_{l-1}\}_{t=1}^T, q_{l-1}, h_t) \\
-    r_l &amp;= \sum_{t=1}^Ta_{lt}h_t
+    \mathbf{h}_t &amp;= Encoder(\mathbf{x}) \\
+    a_{it}&amp;= LocationAttention(\{a_{i-1}\}_{t=1}^T, \mathbf{s}_{i-1}, \mathbf{h}_t) \\
+    r_i &amp;= \sum_{t=1}^Ta_{it}h_t \\
+    p(y_i|y_1,...,y_{i-1}, \mathbf{x})&amp;=Decoder(\mathbf{r}_i,\mathbf{s}_{i-1},c_{i-1})
 \end{align*}
-$$</span><br /> 解码结合了注意力机制和CTC机制，相比较单一的注意力机制模型，该解码不仅考虑到对齐的单调性，也考虑到了解码过程中容易过早检测到end of sentence 符号结束而失去准确性。</p>
+$$</span><br /> 其中，<span class="math inline"><strong>h</strong></span>为解码输出的特征序列，<span class="math inline"><strong>s</strong></span>为hidden vector。解码结合了注意力机制和CTC机制，相比较单一的注意力机制模型，该解码不仅考虑到对齐的单调性，也考虑到了解码过程中容易过早检测到end of sentence 符号结束而失去准确性，原因可以参考<a href="https://www.clsp.jhu.edu/wp-content/uploads/sites/75/2018/06/lecture_advanced_v2.pdf">这里</a>。</p>
 <h1 id="语言模型">语言模型</h1>
 <p>在推断上我们加入递归神经网络语言模型（RNN-LM），相比较<span class="math inline"><em>n</em></span>-gram 语言模型（<span class="math inline"><em>n</em></span>-gram LM），递归神经网络语言模型可以更好地降低错词率。 语言模型的概率和CTT/Attention的概率结合作为推断下一个字符的分数。其表达式可以写作：</p>
 <h1 id="参考文献">参考文献</h1>
-<p><sub>A. Hannun, “Sequence modeling with ctc.”</sub></p>
-<p><sub>Chorowski, Jan K., et al. “Attention-based models for speech recognition.”</sub></p>
-<p><sub>Watanabe, Shinji, et al. “Hybrid CTC/attention architecture for end-to-end speech recognition.”</sub></p>
-<p><sub>Graves, Alex, et al. “Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks.”</sub></p>
+<p><sub><a href="https://distill.pub/2017/ctc/">A. Hannun, “Sequence modeling with ctc.”</a></sub></p>
+<p><sub><a href="https://arxiv.org/pdf/1506.07503.pdf">Chorowski, Jan K., et al. “Attention-based models for speech recognition.”</a></sub></p>
+<p><sub><a href="https://www.merl.com/publications/docs/TR2017-190.pdf">Watanabe, Shinji, et al. “Hybrid CTC/attention architecture for end-to-end speech recognition.”</a></sub></p>
+<p><sub><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.75.6306&amp;rep=rep1&amp;type=pdf">Graves, Alex, et al. “Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks.”</a></sub></p>
 
 <div class="info">Posted by Pingchuan Ma </div>
 
