@@ -29,7 +29,7 @@
 <h1 id="语音识别">语音识别</h1>
 <p>语音识别是一个seq2seq的问题，其表达式如下： <br /><span class="math display">$$
 \begin{align*}
-    \mathbf{y} = \mathop{\argmax}_{x} logp(\mathbf{y}|\mathbf{x})
+    \mathbf{y} = \mathop{arg\max}_{x} logp(\mathbf{y}|\mathbf{x})
 \end{align*}
 $$</span><br /> 其中输入序列为<span class="math inline"><strong>x</strong> = (<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ..., <em>x</em><sub><em>T</em></sub>)</span>，输出序列为<span class="math inline"><strong>y</strong> = (<em>y</em><sub>1</sub>, <em>y</em><sub>2</sub>, ..., <em>y</em><sub><em>L</em></sub>)</span>。在语音识别领域，<span class="math inline"><strong>x</strong></span>指输入的音频序列，<span class="math inline"><strong>y</strong></span>指输出的文字。我们采用encoder-decoder attention框架，在编码部分利用深度网络提取输入信号的high-level特征表达，解码部分包括RNN, Attention和CTC机制。注意力机制作为用作特征的加权，输入raw input信号在网络中完成解码输出，实现端对端的语音识别。</p>
 <h1 id="ctc">CTC</h1>
