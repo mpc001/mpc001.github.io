@@ -23,8 +23,8 @@ body {
     font-family: Lato, Verdana, Helvetica, sans-serif;
     font-size: 14px;
     margin: 10px auto;
-    padding: 30px 70px 90px;
-    min-width: 840px;
+    padding: 30px 60px 90px;
+    min-width: 750px;
 }
 
 header, article {
