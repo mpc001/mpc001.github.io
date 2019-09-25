@@ -3,10 +3,15 @@ html, body {
     padding: 20px 0;
     display: table;
     margin: auto;
+    font-family: Lato, Verdana, Helvetica, sans-serif;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
 }
 * {
     box-sizing: border-box;
 }
+
+
 
 /* Main structure
 ----------------------------------------------- */
@@ -15,7 +20,7 @@ body {
     box-shadow: 0 0 2px #777777;
     color: #333333;
     /* font-family: MJXc-TeX; */
-    font-family: Iosevka;
+    font-family: Lato, Verdana, Helvetica, sans-serif;
     font-size: 14px;
     margin: 10px auto;
     padding: 30px 70px 90px;
@@ -125,7 +130,7 @@ hr {
 }
 
 pre, code, tt {
-    font-family: Iosevka;
+    font-family: Verdana;
     font-size: 1em;
     line-height:2.0;
     color: #4d4d4d;
@@ -189,7 +194,7 @@ img {
 #blog-title {
     font-size: 2.5em;
     font-weight: normal;
-    font-family: Iosevka;
+    font-family: Menlo, Helvetica;
     height:50px;
     margin: 0;
     border: none;
