@@ -25,19 +25,6 @@
             <h1 id="article-title"> </h1>
             <br />
 
-  <head>
-
-    <style>
-      a {
-          text-decoration: none;
-          color: #0000FF;
-      }
-      
-      a:hover {
-          color: #0000FF;
-      }
-      </style>
-  </head>
 
 
 
@@ -49,76 +36,507 @@ In this work, we propose an efficient and straightforward detection method based
 <h1>Examples (Left: Benign; Right: Adversarial)</h1>
 
 
-<h2><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=8  </span></h2>
-<div>
-    <video controls width="90", height="120">
-        <source src="av_adversarial_examples/lraces/fully_attack/sbag5n/sbag5n_a_256v_8.0_ben.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>&nbsp;&nbsp;&nbsp;&nbsp;
-    <video controls width="90", height="120">
-        <source src="av_adversarial_examples/lraces/fully_attack/sbag5n/sbag5n_a_256v_8.0_adv.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-  <a href="#" style="position: relative; top: -.6em"><label for="video1" style="float: none;">[Reveal Transcription]</label></a>
-  <input checked="checked" id="video1" type="checkbox" />
-  <span class="abstract" style="position: relative; top: -.6em; padding-left: 0em;">
-    &ldquo;LAY RED AT C EIGHT SOON&rdquo; 
-  </span>
-</div>
+    <h4>1. Sentence-level attack (fully targeted attack)</h4> 
+      <h3> The following videos are partial transcribed to: &ldquo;LAY RED AT C EIGHT SOON&rdquo;</h3>
 
-<h2><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=4  </span></h2>
-<div>
-    <video controls width="90", height="120">
-        <source src="av_adversarial_examples/lraces/fully_attack/sbay7s/sbay7s_a_512v_4.0_ben.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>&nbsp;&nbsp;&nbsp;&nbsp;
-    <video controls width="90", height="120">
-        <source src="av_adversarial_examples/lraces/fully_attack/sbay7s/sbay7s_a_512v_4.0_adv.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-  <a href="#" style="position: relative; top: -.6em"><label for="video2" style="float: none;">[Reveal Transcription]</label></a>
-  <input checked="checked" id="video2" type="checkbox" />
-  <span class="abstract" style="position: relative; top: -.6em; padding-left: 0em;">
-    &ldquo;LAY RED AT C EIGHT SOON&rdquo; 
-  </span>
-</div>
+   <table border="1">
+    <tr>
+      <td>No.</td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=0, ε<sup><em>V</em></sup>=0</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=1024, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=1024, ε<sup><em>V</em></sup>=8</span></td>
+      <!--       <td>Text</td> -->
+    </tr>
+    
+    <tr>
+      <td>0</td>
 
-<h2><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=8  </span></h2>
-<div>
-    <video controls width="90", height="120">
-    <source src="av_adversarial_examples/lraces/fully_attack/sriq8n/sriq8n_a_512v_8.0_ben.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>&nbsp;&nbsp;&nbsp;&nbsp;
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_bbiezp_bbiezp_a_256v_4.0_bbiezp_a_256v_4.0_ben.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
 
-    <video controls width="90", height="120">
-    <source src="av_adversarial_examples/lraces/fully_attack/sriq8n/sriq8n_a_512v_8.0_adv.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-  <a href="#" style="position: relative; top: -.6em"><label for="video0" style="float: none;">[Reveal Transcription]</label></a>
-  <input checked="checked" id="video0" type="checkbox" />
-  <span class="abstract" style="position: relative; top: -.6em; padding-left: 0em;">
-    &ldquo;LAY RED AT C EIGHT SOON&rdquo; 
-  </span>
-</div>
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_bbiezp_bbiezp_a_256v_4.0_bbiezp_a_256v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_bbiezp_bbiezp_a_256v_8.0_bbiezp_a_256v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_bbiezp_bbiezp_a_512v_4.0_bbiezp_a_512v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_bbiezp_bbiezp_a_512v_8.0_bbiezp_a_512v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_bbiezp_bbiezp_a_1024v_4.0_bbiezp_a_1024v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_bbiezp_bbiezp_a_1024v_8.0_bbiezp_a_1024v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+    </tr>
+
+    <tr>
+      <td>No.</td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=0, ε<sup><em>V</em></sup>=0</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=1024, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=1024, ε<sup><em>V</em></sup>=8</span></td>
+      <!--       <td>Text</td> -->
+    </tr>
 
 
-<h2><span class="math inline">ε<sup><em>A</em></sup>=1024, ε<sup><em>V</em></sup>=8  </span></h2>
-<div>
-    <video controls width="90", height="120">
-        <source src="av_adversarial_examples/lraces/fully_attack/bbad4n/bbad4n_a_1024v_8.0_ben.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>&nbsp;&nbsp;&nbsp;&nbsp;
-    <video controls width="90", height="120">
-        <source src="av_adversarial_examples/lraces/fully_attack/bbad4n/bbad4n_a_1024v_8.0_adv.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-  <a href="#" style="position: relative; top: -.6em"><label for="video3" style="float: none;">[Reveal Transcription]</label></a>
-  <input checked="checked" id="video3" type="checkbox" />
-  <span class="abstract" style="position: relative; top: -.6em; padding-left: 0em;">
-    &ldquo;LAY RED AT C EIGHT SOON&rdquo; 
-  </span>
+    <tr>
+      <td>1</td>
 
-</div>
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_sbag5n_sbag5n_a_256v_4.0_sbag5n_a_256v_4.0_ben.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_sbag5n_sbag5n_a_256v_4.0_sbag5n_a_256v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_sbag5n_sbag5n_a_256v_8.0_sbag5n_a_256v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_sbag5n_sbag5n_a_512v_4.0_sbag5n_a_512v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_sbag5n_sbag5n_a_512v_8.0_sbag5n_a_512v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_sbag5n_sbag5n_a_1024v_4.0_sbag5n_a_1024v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_full_attack_sbag5n_sbag5n_a_1024v_8.0_sbag5n_a_1024v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+    </tr>
+    </table>
+
+
+    <h4>2. Sentence-level attack (partially targeted attack)</h4>
+      <h3> The following videos are partial transcribed to: &ldquo;BIN BLUE AT A ZERO PLEASE&rdquo;</h3>
+
+    <table border="1">
+    <tr>
+      <td>No.</td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=0, ε<sup><em>V</em></sup>=0</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=1024, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=1024, ε<sup><em>V</em></sup>=8</span></td>
+      <!--       <td>Text</td> -->
+    </tr>
+    
+    <tr>
+      <td>0</td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_lrbk1s_lrbk1s_a_256v_4.0_lrbk1s_a_256v_4.0_ben.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_lrbk1s_lrbk1s_a_256v_4.0_lrbk1s_a_256v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_lrbk1s_lrbk1s_a_256v_8.0_lrbk1s_a_256v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_lrbk1s_lrbk1s_a_512v_4.0_lrbk1s_a_512v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_lrbk1s_lrbk1s_a_512v_8.0_lrbk1s_a_512v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_lrbk1s_lrbk1s_a_1024v_4.0_lrbk1s_a_1024v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_lrbk1s_lrbk1s_a_1024v_8.0_lrbk1s_a_1024v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+    </tr>
+
+    <tr>
+      <td>No.</td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=0, ε<sup><em>V</em></sup>=0</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=1024, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=1024, ε<sup><em>V</em></sup>=8</span></td>
+      <!--       <td>Text</td> -->
+    </tr>
+
+
+    <tr>
+      <td>1</td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_sbay7s_sbay7s_a_256v_4.0_sbay7s_a_256v_4.0_ben.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_sbay7s_sbay7s_a_256v_4.0_sbay7s_a_256v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_sbay7s_sbay7s_a_256v_8.0_sbay7s_a_256v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_sbay7s_sbay7s_a_512v_4.0_sbay7s_a_512v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_sbay7s_sbay7s_a_512v_8.0_sbay7s_a_512v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_sbay7s_sbay7s_a_1024v_4.0_sbay7s_a_1024v_4.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="90", height="120">
+          <source src="av_adversarial_examples/adv_attack/sentence_adv_partial_attack_sbay7s_sbay7s_a_1024v_8.0_sbay7s_a_1024v_8.0_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+    </tr>
+    </table>
+
+
+    <h4>3. Word-level attack (BIM)</h4>
+    <table border="1">
+    <tr>
+      <td>No.</td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=0, ε<sup><em>V</em></sup>=0</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=8</span></td>
+      <!--       <td>Text</td> -->
+    </tr>
+    
+    <tr>
+      <td>0</td>
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_bim_attack_a256_v4_iter5_valpha1_aalpha64_BILLION_00009_bim_attack_a256_v4_iter5_valpha1_aalpha64_ben.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_bim_attack_a256_v4_iter5_valpha1_aalpha64_BILLION_00009_bim_attack_a256_v4_iter5_valpha1_aalpha64_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_bim_attack_a256_v8_iter10_valpha1_aalpha64_BILLION_00009_bim_attack_a256_v8_iter10_valpha1_aalpha64_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_bim_attack_a512_v4_iter5_valpha1_aalpha64_BILLION_00009_bim_attack_a512_v4_iter5_valpha1_aalpha64_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_bim_attack_a512_v8_iter10_valpha1_aalpha64_BILLION_00009_bim_attack_a512_v8_iter10_valpha1_aalpha64_ben.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>  
+
+    </tr>
+
+
+
+    <tr>
+      <td>No.</td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=0, ε<sup><em>V</em></sup>=0</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=8</span></td>
+      <!--       <td>Text</td> -->
+    </tr>
+    
+    <tr>
+      <td>1</td>
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_bim_attack_a256_v4_iter5_valpha1_aalpha64_ABOUT_00003_bim_attack_a256_v4_iter5_valpha1_aalpha64_ben.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_bim_attack_a256_v4_iter5_valpha1_aalpha64_ABOUT_00003_bim_attack_a256_v4_iter5_valpha1_aalpha64_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_bim_attack_a256_v8_iter10_valpha1_aalpha64_ABOUT_00003_bim_attack_a256_v8_iter10_valpha1_aalpha64_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_bim_attack_a512_v4_iter5_valpha1_aalpha64_ABOUT_00003_bim_attack_a512_v4_iter5_valpha1_aalpha64_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_bim_attack_a512_v8_iter10_valpha1_aalpha64_ABOUT_00003_bim_attack_a512_v8_iter10_valpha1_aalpha64_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>  
+
+    </tr>
+
+
+
+    </table>
+
+
+
+
+
+
+    <h4>4. Word-level attack (FGSM)</h4>
+    <table border="1">
+    <tr>
+      <td>No.</td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=0, ε<sup><em>V</em></sup>=0</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=8</span></td>
+      <!--       <td>Text</td> -->
+    </tr>
+    
+    <tr>
+      <td>0</td>
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_fgsm_attack_v4_a256_BILLION_00009_fgsm_attack_v4_a256_ben.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_fgsm_attack_v4_a256_BILLION_00009_fgsm_attack_v4_a256_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_fgsm_attack_v4_a512_BILLION_00009_fgsm_attack_v4_a512_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_fgsm_attack_v8_a256_BILLION_00009_fgsm_attack_v8_a256_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_BILLION_00009_BILLION_00009_fgsm_attack_v8_a512_BILLION_00009_fgsm_attack_v8_a512_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>  
+
+    </tr>
+
+
+
+    <tr>
+      <td>No.</td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=0, ε<sup><em>V</em></sup>=0</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=256, ε<sup><em>V</em></sup>=8</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=4</span></td>
+      <td><span class="math inline">ε<sup><em>A</em></sup>=512, ε<sup><em>V</em></sup>=8</span></td>
+      <!--       <td>Text</td> -->
+    </tr>
+    
+    <tr>
+      <td>1</td>
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_fgsm_attack_v4_a256_ABOUT_00003_fgsm_attack_v4_a256_ben.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_fgsm_attack_v4_a256_ABOUT_00003_fgsm_attack_v4_a256_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_fgsm_attack_v8_a256_ABOUT_00003_fgsm_attack_v8_a256_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_fgsm_attack_v4_a512_ABOUT_00003_fgsm_attack_v4_a512_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td> 
+
+      <td>
+        <video controls width="128", height="128">
+          <source src="av_adversarial_examples/adv_attack/word_adv_ABOUT_00003_ABOUT_00003_fgsm_attack_v8_a512_ABOUT_00003_fgsm_attack_v8_a512_adv.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>  
+
+    </tr>
+
+
+
+    </table>
+
+
+
 
 </article>
     </body>
