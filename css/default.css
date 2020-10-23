@@ -224,7 +224,7 @@ h2 {
     font-size: 1.05em;
     font-style: normal;
     font-weight: normal;
-}
+  }
 h3 {
     font-size: 1.0em;
     font-style: italic;
@@ -238,6 +238,14 @@ h4 {
 h5 {
     font-size: 0.8em;
 }
+#horizontal_line {
+    font-size: 0em;
+    line-height: 0em;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0px;
+    width: 50%;
+}
+
 
 /* Footer
 ----------------------------------------------- */
