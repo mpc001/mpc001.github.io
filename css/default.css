@@ -3,7 +3,8 @@ html, body {
     padding: 20px 0;
     display: table;
     margin: auto;
-    font-family: Lato, Verdana, Helvetica, sans-serif;
+    /*font-family: Lato, Verdana, Helvetica, sans-serif;*/
+    font-family: Georgia, serif;
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
 }
@@ -19,9 +20,10 @@ body {
     background-color: #ffffff;
     box-shadow: 0 0 2px #777777;
     color: #333333;
+    font-family: Georgia, serif;
     /* font-family: MJXc-TeX; */
     /* font-family: Lato, Verdana, Helvetica, sans-serif; */
-    font-family:"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    /*font-family:"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";*/
     font-size: 1rem;
     font-weight:400;
     line-height:1.5;
@@ -135,7 +137,8 @@ hr {
 
 pre, code, tt {
     /*font-family: Verdana;*/
-    font-family:"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    /*font-family:"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";*/
+    font-family: Georgia, serif;
     font-size: 1em;
     line-height:2.0;
     color: #4d4d4d;
@@ -199,7 +202,8 @@ img {
 #blog-title {
     font-size: 24px;
     font-weight: normal;
-    font-family: Menlo, Helvetica;
+    /*font-family: Menlo, Helvetica;*/
+    font-family: Georgia, serif;
     height:35px;
     margin: 0;
     border: none;
@@ -224,7 +228,7 @@ h2 {
     font-size: 1.05em;
     font-style: normal;
     font-weight: normal;
-  }
+}
 h3 {
     font-size: 1.0em;
     font-style: italic;
@@ -238,14 +242,6 @@ h4 {
 h5 {
     font-size: 0.8em;
 }
-#horizontal_line {
-    font-size: 0em;
-    line-height: 0em;
-    border-bottom: 1px solid #000;
-    margin-bottom: 0px;
-    width: 50%;
-}
-
 
 /* Footer
 ----------------------------------------------- */
