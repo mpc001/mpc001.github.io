@@ -4,7 +4,7 @@ html, body {
     display: table;
     margin: auto;
     /*font-family: Lato, Verdana, Helvetica, sans-serif;*/
-    font-family: Georgia, serif;
+    font-family: KaTeX_Main, Georgia, serif;
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
 }
@@ -20,11 +20,11 @@ body {
     background-color: #ffffff;
     box-shadow: 0 0 2px #777777;
     color: #333333;
-    font-family: Georgia, serif;
+    font-family: KaTeX_Main, Georgia, Times New Roman, serif;
     /* font-family: MJXc-TeX; */
     /* font-family: Lato, Verdana, Helvetica, sans-serif; */
     /*font-family:"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";*/
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight:400;
     line-height:1.5;
     text-align:left;
@@ -138,7 +138,7 @@ hr {
 pre, code, tt {
     /*font-family: Verdana;*/
     /*font-family:"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";*/
-    font-family: Georgia, serif;
+    font-family: KaTeX_Main, Georgia, serif;
     font-size: 1em;
     line-height:2.0;
     color: #4d4d4d;
@@ -203,7 +203,7 @@ img {
     font-size: 24px;
     font-weight: normal;
     /*font-family: Menlo, Helvetica;*/
-    font-family: Georgia, serif;
+    font-family: KaTeX_Main, Georgia, serif;
     height:35px;
     margin: 0;
     border: none;
@@ -274,6 +274,8 @@ a:hover {
 }
 table.postindex{
   width: 100%;
+  border-collapse: collapse;
+  border-collapse: separate;
 }
 .info {
   margin-top: 10px;
@@ -285,7 +287,7 @@ table.postindex{
     color: #999;
 }
 table.postindex td.right {
-  text-align: center;
+  text-align: right;
 }
 
 table.center {
@@ -554,6 +556,7 @@ animation: blinker 1s step-start infinite;
   opacity: 0;
 }
 }
+
 
 /*# sourceMappingURL=bootstrap.min.css.map */
 
