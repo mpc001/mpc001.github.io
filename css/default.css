@@ -557,6 +557,6 @@ animation: blinker 1s step-start infinite;
 }
 }
 
-
-/*# sourceMappingURL=bootstrap.min.css.map */
-
+td {
+  padding: 3px;
+}
