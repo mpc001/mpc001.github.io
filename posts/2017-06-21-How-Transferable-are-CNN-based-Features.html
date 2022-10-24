@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>How Transferable are CNN-based Features for Age and Gender Classification</title>
+        <link rel="stylesheet" href="../css/default.css" />
+        <link rel="stylesheet" href="../css/syntax.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://chaoxuprime.com/mathjax_conf.js">
+        </script>
+
+    </head>
+
+    <body>
+        <header class="hide-on-print">
+            <div id="blog-title">
+                 <a href="../">chuan</a>
+            </div>
+
+        </header>
+
+        <article role="main">
+            <h1 id="article-title">How Transferable are CNN-based Features for Age and Gender Classification</h1>
+            <br />
+
+<p>这篇2016年的<a href="https://arxiv.org/pdf/1610.00134">文章链接</a>，作者Gökhan Özbulak, Yusuf Aytar, Hazım Kemal Ekenel。 主要讲述迁移学习在年龄和性别识别中的可行性。</p>
+<h1 id="方法">方法</h1>
+<h2 id="常用模型">常用模型</h2>
+<p>GilNet CNN模型有三个卷积层，三个全连接层。每一个卷积层紧跟一个激活层，激活函数为（ReLU）以及池化层，采用最大池化策略。经过两个卷积层后的数据会归一化。<span class="math inline">256 × 256</span>的三通道图片被随机地裁剪为<span class="math inline">227 × 227</span>，并通过镜像增强数据，每一次迭代过程中由50个图片参与网络的训练。</p>
+<p>Alex-Like模型与AlexNet模型很相近，因此被命名为AlexNet-Like卷积模型，它区别于AlexNet模型的地方在于池化和归一化层及数据增强策略。AlexNet-like模型由五个卷积层，三个全连接层组成。</p>
+<p>VGG-Face卷积模型是基于VGGNet的架构的一个16层网络，该架构常用于目标识别问题，以训练方式不同做区分。VGG-Face模型被用于训练2.6M的图片。在预处理过程中，对训练数据依次做了cropping和flipping，batch size的值取64。</p>
+<h2 id="迁移步骤">迁移步骤</h2>
+<p>将最后一个全连接层的学习速率设置为比其它层的的学习速率高10倍。将高层的学习速率设置为一个更高的值的原因是因为这些层对于分类起了主导的作用。另外，将全连接层FC8的输出数目调节适应新问题的输出数目。一旦模型基于上述的步骤应用后就可以开始训练了，训练过程针对年龄和性别分开进行训练。</p>
+<p>在GilNet里，神经网络的特征（年龄，性别）分别从第二个全连接层提取，并得到的一个512维度的特征向量。所有的特征向量都会被用于训练SVM分类器，径向基核函数和线性核函数的cost value可以取<span class="math inline"><em>C</em> = {0.001, 0.01, 0.1, 1, 10, 100, 1000}</span>，最后得到14个SVM模型。在AlexNet-like里，第二个全连接层（FC7）被用来做特征提取，得到的特征向量长是4096，每个特征向量都会给SVM分类器中，这个分类器的核是线形核函数或径向基核函数。</p>
+<h1 id="实验">实验</h1>
+<h2 id="数据集">数据集</h2>
+<p>Adience Benchmark是一个26,580张脸部图片的数据集，采集自Flickr网站，关于该数据集的描述参见<a href>这里</a>，该数据集带有年龄标签和性别标签。根据年龄段分，该数据集可以分为8类，分别为[0, 2], [4, 6], [8, 13], [15, 20], [25, 32], [38, 43], [48, 53], [60, 100]。每一张图片带有性别和年龄的标签。对于年龄和性别的估计，五折交叉验证被用于对齐的图片。每折包括了训练，验证和测试集，比例为67%, 8%, 25%。</p>
+<h2 id="结果">结果</h2>
+<p>在年龄问题的估计上，效果最好的是Ft-VGG-Face加RBF核，核的参数C=100。平均准确率为57.9%。效果排在第二的是Ft-VGG-Face，准确率为57.2%，效果排在第三的模型Ft-AlexNet-like，平均准确率为52.3%。在性别问题的分类中，效果最好的是Ft-VGG-Face加RBF核，核的参数C=100。平均准确率可达到92.0%，效果排在第二的模型为Ft-VGG-Face，实现了91.9%的准确率，它比排第三的模型Ft-AlexNet-Like高出了1.4%的准确率。而GilNet的最好效果为87.5%。</p>
+<h1 id="结论">结论</h1>
+<p>这项研究中，先进的深层卷积网络模型被应用于性别和年龄的估计的问题。在这其中，一个通用的对象识别模型和一个针对特定脸部识别的模型被分别实验，用于探究模型迁移性。通过对迁移一个通用的AlexNet模型和一个域特定的模型VGGFace，将在Adience Benchmark的分类结果与任务特定的模型GilNet卷积模型进行比较，可以看到，1）通用模型和域特定的模型都可以成功地应用于年龄和性别的分类问题中。2）迁移一个模型相比较从头开始针对特定任务进行训练的方法可以具有更好的分类特性。3）迁移一个接近目标域的模型比迁移一个通用的模型具有更好的分类效果。迁移模型对于表现最好的GilNet模型来说，对年龄和性别的分类结果分别提升了7%和4.5%。</p>
+
+<div class="info">Posted by Pingchuan Ma </div>
+
+        </article>
+
+
+    </body>
+</html>

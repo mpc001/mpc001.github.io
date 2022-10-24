@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> </title>
+        <link rel="stylesheet" href="./css/default.css" />
+        <link rel="stylesheet" href="./css/syntax.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://chaoxuprime.com/mathjax_conf.js">
+        </script>
+    </head>
+
+    <body>
+        <header class="hide-on-print">
+            <div id="blog-title">
+                 <h1 href="./">Visual Speech Recognition for Multiple Languages in the Wild</h5>
+            </div>
+
+        </header>
+
+        <article role="main">
+            <h1 id="article-title"> </h1>
+            <br />
+        
+
+            <div class="header">
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://mpc001.github.io">Pingchuan Ma<sup>1</sup></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://ibug.doc.ic.ac.uk/people/spetridis">Stavros Petridis<sup>1,2</sup></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://ibug.doc.ic.ac.uk/people/mpantic">Maja Pantic<sup>1,2</sup></a>
+                </h2>
+    
+                <h3>
+                    <i><sup>1</sup>Imperial College London</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i><sup>2</sup>Meta AI</i>
+                </h3>
+    
+
+                <h4>
+                    <a href="https://rdcu.be/cYbcp">[Paper]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://github.com/mpc001/Visual_Speech_Recognition_for_Multiple_Languages">[Code]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://github.com/mpc001/Visual_Speech_Recognition_for_Multiple_Languages/tree/master/models">[Model]</a></p>
+                </h4>
+            </div>
+
+            <h1>Abstract</h1>
+                Visual speech recognition (VSR) aims to recognise the content of speech based on the lip movements without relying on the audio stream. Advances in deep learning and the availability of large audio-visual datasets have led to the development of much more accurate and robust VSR models than ever before. However, these advances are usually due to larger training sets rather than the model design. In this work, we demonstrate that designing better models is equally important to using larger training sets. We propose the addition of prediction-based auxiliary tasks to a VSR model and highlight the importance of hyper-parameter optimisation and appropriate data augmentations. We show that such model works for different languages (<b>English</b>, <b>Mandarin</b>, <b>Spanish</b>, <b>French</b>, <b>Portuguese</b> and <b>Italian</b>) and outperforms all previous methods trained on publicly available datasets by a large margin. It even outperforms models that were trained on non-publicly available datasets containing up to to 21 times more data. We show furthermore that using additional training data, even in other languages or with automatically generated transcriptions, results in further improvement. 
+
+            <h1>Demo</h1>
+                <center>
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/FIau-6JA9Po"> </iframe>
+                </center>
+        </article>
+    </body>
+</html>
