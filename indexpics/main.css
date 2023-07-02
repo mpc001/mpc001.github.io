@@ -1,0 +1,72 @@
+header{width:100%;height:50px;margin-top:0px;text-align:center;background-color:#003366;position:fixed;z-index:2}
+body{margin:auto;padding:0;color:#000;-webkit-transition:all;-moz-transition:all;-ms-transition:all;-o-transition:all;transition:all;font-family:"Open Sans",
+Segoe,"Segoe UI",
+"Lucida Sans Unicode","Lucida Grande",
+"Avenir","Seravek","Ubuntu",
+"DejaVu Sans","Trebuchet MS",Verdana,Arial,sans-serif;font-size:14.4px;line-height:170%;text-align:justify;font-weight:400}
+h1,h2,h3,h4,h5,h6,div.title,div.ftheader,span.venue,span.highlight{font-weight:600}
+ul,ol,dl{float:left;margin:0;padding:5px 10px 6px 30px;width:calc(100% - 30px)}
+img.img_responsive{width:100%;height:auto;display:block}
+div.container a:link,
+div.container a:visited{color:#0055AA;text-decoration:none}
+div.ftheader a:link,
+div.ftheader a:visited,
+div.ftsubheader a:link,
+div.ftsubheader a:visited{color:#FFFFFF;text-decoration:none}
+div.title a:link,
+div.title a:visited{color:#000000}
+div.authors a:link,
+div.authors a:visited{color:#777777}
+div.content a:hover,
+div.content a:hover div.text,
+div.ftsubheader a:hover{text-decoration:underline}
+#span.jw{color:#000000;font-weight:600;text-decoration:underline}
+span.jw{color:#000000;font-weight:600}
+span.author{white-space:nowrap}
+div.outercontainer{text-align:center}
+div.header,div.container,div.content,div.img,div.text{display:inline-block;zoom:1;display*:inline;text-align:left;margin-left:auto;margin-right:auto;vertical-align:middle;max-width:960px}
+div.header,div.container{min-width:330px}
+div.img,div.text{padding-left:10px;padding-right:10px}
+div.header{line-height:50px}
+div.ftheader,div.ftsubheader{display:inline-block;color:#FFF}
+div.ftheader{float:left;padding-left:15px;font-size:1.17em}
+div.ftsubheader{float:right;padding-left:20px;padding-right:20px}
+div.outercontainer,div.content{padding-top:0px;padding-bottom:0px}
+div.container,div.content{width:100%}
+div.body{margin-top:50px}
+div.content{margin-bottom:10px}
+div.heading, div.front{text-align:left;position:relative;z-index:1}
+div.heading div.img{padding:30px 30px 30px 10px;max-width:30%}
+div.heading div.img img{width:200px}
+div.heading span.tag{padding-right:15px}
+div.heading ul{padding-bottom:0px}
+div.publication{padding-top:0px;padding-bottom:20px}
+div.publication div.img{max-width:300px;padding-right:0px;padding-top:5px}
+div.publication div.text{max-width:650px;text-align:left;vertical-align:top}
+div.authors{font-size:100%;color:#777777}
+span.venue,span.highlight,
+div.publication span.tag{padding-right:0px;font-size:100%}
+span.highlight,
+span.highlight a:link,
+span.highlight a:visited{color:#BB2222}
+span.fullvenue{padding-left:8px}
+div.anchor{border-top:50px solid transparent;margin-top:-50px}
+div.recruit{display:none}
+div.people div.title{padding-left:12px}
+div.people li{float:left;width:350px}
+div.people li:nth-child(odd){padding-right:100px}
+@media only screen and (max-width: 599px) {
+    div.ftsubheader{padding-left:10px;padding-right:10px}
+    div.heading div.img{padding-right:80px}
+    div.publication div.img{display:none}
+    div.publication div.text{text-align:left}
+    div.content,div.publication{padding-top:0px;padding-bottom:10px}
+                                div.people li:nth-child(odd){padding-right:0px}
+    body{font-size:80%}
+}
+@media only screen and (min-width: 600px) {
+    div.heading div.img{padding-right:calc(35px)}
+    div.heading div.info{padding-right:calc(40% - 350px)}
+    div.publication div.img{width:23%}
+    div.publication div.text{max-width:70%;text-align:left}
+}
