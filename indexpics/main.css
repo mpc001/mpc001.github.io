@@ -43,7 +43,7 @@ div.heading ul{padding-bottom:0px}
 div.publication{padding-top:0px;padding-bottom:20px}
 div.publication div.img{max-width:300px;padding-right:0px;padding-top:5px}
 div.publication div.text{max-width:650px;text-align:left;vertical-align:top}
-div.authors{font-size:100%;color:#777777}
+div.authors{font-size:100%;color:#777777;width: 120%}
 span.venue,span.highlight,
 div.publication span.tag{padding-right:0px;font-size:100%}
 span.highlight,
