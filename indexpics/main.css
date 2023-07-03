@@ -3,7 +3,7 @@ body{margin:auto;padding:0;color:#000;-webkit-transition:all;-moz-transition:all
 Segoe,"Segoe UI",
 "Lucida Sans Unicode","Lucida Grande",
 "Avenir","Seravek","Ubuntu",
-"DejaVu Sans","Trebuchet MS",Verdana,Arial,sans-serif;font-size:14.4px;line-height:170%;text-align:justify;font-weight:400}
+"DejaVu Sans","Trebuchet MS",Verdana,Arial,sans-serif;font-size:14.0px;line-height:170%;text-align:justify;font-weight:400}
 h1,h2,h3,h4,h5,h6,div.title,div.ftheader,span.venue,span.highlight{font-weight:600}
 ul,ol,dl{float:left;margin:0;padding:5px 10px 6px 30px;width:calc(100% - 30px)}
 img.img_responsive{width:100%;height:auto;display:block}
@@ -43,7 +43,7 @@ div.heading ul{padding-bottom:0px}
 div.publication{padding-top:0px;padding-bottom:20px}
 div.publication div.img{max-width:300px;padding-right:0px;padding-top:5px}
 div.publication div.text{max-width:650px;text-align:left;vertical-align:top}
-div.authors{font-size:100%;color:#777777;width: 120%}
+div.authors{font-size:100%;color:#777777}
 span.venue,span.highlight,
 div.publication span.tag{padding-right:0px;font-size:100%}
 span.highlight,
